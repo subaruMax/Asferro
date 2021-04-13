@@ -54,6 +54,9 @@ header {
   width: 365px;
   height: 24.5px;
   margin: 44px 0 43.5px 192.47px;
+  li {
+    margin-right: 56px;
+  }
   a {
     font-family: Tenor Sans;
     font-style: normal;
@@ -62,9 +65,16 @@ header {
     line-height: 21px;
     text-transform: uppercase;
     color: #282a28;
-    flex: none;
-    flex-grow: 0;
-    margin-right: 56px;
+  }
+  .menu-active {
+    color: #d3c1ac;
+    .underline {
+      box-sizing: content-box;
+      width: 30px;
+      height: 3px;
+      background: #d3c1ac;
+      margin: 8px auto 0 auto;
+    }
   }
 }
 
@@ -140,7 +150,6 @@ main {
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-
     a {
       margin-bottom: 40px;
       color: #b6b9b6;
@@ -157,10 +166,12 @@ main {
     list-style: circle;
     color: #282a28 !important;
     margin-left: 29px;
+    transition: all 400ms;
     &::before {
       content: "";
       position: absolute;
-      top: 22px;
+      top: 50%;
+      transform: translateY(-50%);
       left: -28px;
       width: 12px;
       height: 12px;
@@ -173,7 +184,7 @@ main {
     margin-bottom: 50px;
     width: 731px;
     height: 548px;
-    background: url(../img/kitchen_b.png);
+    transition: all 400ms;
 
     .service-image-description {
       font-family: Quicksand;

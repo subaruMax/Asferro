@@ -17,6 +17,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script defer src="./js/jquery-3.6.0.min.js"></script>
+    <script defer src="./js/index.js"></script>
     <title>Interia</title>
   </head>
   <body>
@@ -27,15 +29,15 @@
         ><img src="img/menu_icon.svg" class="navicon"></img
       ></label>
       <nav>
-        <ul class="menu">
-          <li><a href="#">about</a></li>
-          <li><a href="#">services</a></li>
-          <li><a href="#">projects</a></li>
+        <ul class="menu" id="nav-menu">
+          <li ><a href="#">about <div class="underline"></div> </a></li>
+          <li><a href="#">services <div class="underline"></div></a></li>
+          <li><a href="#">projects <div class="underline"></div></a></li>
         </ul>
       </nav>
-      <div class="language-sel">
-        <a href="#" class="lang-active">en</a>
-        <a href="#">ru</a>
+      <div class="language-sel" id="language-sel">
+        <a href="#" id="en" class="lang-active">en</a>
+        <a href="#" id="ru">ru</a>
       </div>
     </header>
     <main>
@@ -51,15 +53,15 @@
           class="scroll-info-arrow"
         />
       </div>
-      <div class="service-picker">
-        <a href="#">Living Room</a>
-        <a href="#" class="service-picker-active">Kitchen</a>
-        <a href="#">Bathroom</a>
-        <a href="#">Terrace</a>
+      <div id="servicePicker" class="service-picker">
+        <a href="#" id="livingRoom">Living Room</a>
+        <a href="#" id="kitchen" >Kitchen</a>
+        <a href="#" id="bathroom">Bathroom</a>
+        <a href="#" id="terrace">Terrace</a>
       </div>
-      <div class="service-imgage">
-        <div class="service-image-description">
-          <p>
+      <div class="service-imgage" id="mainIMG">
+        <div class="service-image-description" >
+          <p id="mainIMGdescription">
             Get the modern luxury kitchen look. Explore chef driven interiors
             and decor.
           </p>

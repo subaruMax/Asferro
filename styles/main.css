@@ -54,6 +54,9 @@ header {
   height: 24.5px;
   margin: 44px 0 43.5px 192.47px;
 }
+.menu li {
+  margin-right: 56px;
+}
 .menu a {
   font-family: Tenor Sans;
   font-style: normal;
@@ -62,9 +65,16 @@ header {
   line-height: 21px;
   text-transform: uppercase;
   color: #282a28;
-  flex: none;
-  flex-grow: 0;
-  margin-right: 56px;
+}
+.menu .menu-active {
+  color: #d3c1ac;
+}
+.menu .menu-active .underline {
+  box-sizing: content-box;
+  width: 30px;
+  height: 3px;
+  background: #d3c1ac;
+  margin: 8px auto 0 auto;
 }
 
 .language-sel {
@@ -154,11 +164,13 @@ main .service-picker-active {
   list-style: circle;
   color: #282a28 !important;
   margin-left: 29px;
+  transition: all 400ms;
 }
 main .service-picker-active::before {
   content: "";
   position: absolute;
-  top: 22px;
+  top: 50%;
+  transform: translateY(-50%);
   left: -28px;
   width: 12px;
   height: 12px;
@@ -170,7 +182,7 @@ main .service-imgage {
   margin-bottom: 50px;
   width: 731px;
   height: 548px;
-  background: url(../img/kitchen_b.png);
+  transition: all 400ms;
 }
 main .service-imgage .service-image-description {
   font-family: Quicksand;
