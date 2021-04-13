@@ -1,5 +1,11 @@
 html {
   box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 *,
@@ -10,7 +16,7 @@ html {
 
 body {
   width: 1440px;
-  margin: auto;
+  height: 900px;
 }
 
 a {
@@ -92,10 +98,122 @@ header {
 }
 
 main {
+  display: flex;
   width: 1335px;
   height: 598px;
   margin: 24px 0 70px 105px;
-  background-color: #777792;
+}
+main .scroll-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 72px;
+  height: 131.28px;
+  margin: 251.14px 167px 301.86px 0;
+}
+main .scroll-info .scroll-info-text {
+  font-family: Quicksand;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 72px;
+  height: 45px;
+  margin: 24px 0;
+  color: #d3c1ac;
+}
+main .scroll-info .scroll-info-arrow {
+  width: 16px;
+  height: 19px;
+}
+main .service-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 258px;
+  height: 260px;
+  margin: 144px 107px 194px 0;
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+main .service-picker a {
+  margin-bottom: 40px;
+  color: #b6b9b6;
+}
+main .service-picker a:last-child {
+  margin-bottom: 0;
+}
+main .service-picker-active {
+  position: relative;
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: uppercase;
+  list-style: circle;
+  color: #282a28 !important;
+  margin-left: 28px;
+}
+main .service-picker-active::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: -28px;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: #d3c1ac;
+}
+main .service-imgage {
+  position: relative;
+  margin-bottom: 50px;
+  width: 731px;
+  height: 548px;
+  background: url(/img/kitchen.png);
+}
+main .service-imgage .service-image-description {
+  font-family: Quicksand;
+  box-sizing: border-box;
+  position: absolute;
+  right: 48px;
+  bottom: -50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(82.68deg, rgba(171, 164, 156, 0.8) 12.16%, rgba(249, 246, 234, 0.8) 79.63%);
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(40px);
+  width: 395px;
+  height: 164px;
+}
+main .service-imgage .service-image-description p {
+  font-weight: 400;
+  width: 298px;
+  height: 40px;
+  margin: 56px 56px 24px 40px;
+}
+main .service-imgage .service-image-description a {
+  width: 63px;
+  height: 20px;
+  margin: 0 9.4px 24px 40px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #282a28;
+}
+main .service-imgage .service-image-description a img {
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 footer {
@@ -106,7 +224,7 @@ footer {
   margin: auto;
 }
 footer .logo_small {
-  width: 41.81px;
+  width: 42px;
   height: 30px;
   margin: 33px 191.19px 33px 111px;
 }
@@ -121,7 +239,7 @@ footer .container {
   flex-direction: row;
   font-family: Quicksand;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 16px;
   line-height: 20px;
   color: #282a28;
@@ -150,13 +268,8 @@ footer .social.container .dot {
   width: 3px;
   height: 3px;
   background: #b6b9b6;
-  border-radius: 50px;
-}
-footer .social.container .dot:nth-child(2) {
-  margin: 0 20.34px 0 19.43px;
-}
-footer .social.container .dot:nth-child(4) {
-  margin: 0 20.5px 0 20.13px;
+  border-radius: 10px;
+  margin: 0 16px;
 }
 
 /*# sourceMappingURL=main.css.map */
