@@ -1,3 +1,6 @@
+$breakpoint-ipad: 834px;
+$breakpoint-iphone: 375px;
+
 html {
   box-sizing: border-box;
   display: flex;
@@ -26,19 +29,24 @@ a {
 //header
 
 header {
+  position: relative;
   margin: auto;
   width: 1440px;
   height: 112px;
   display: flex;
 }
-
 .logo_big {
   width: 65.53px;
   height: 60px;
   margin: 26px 0 26px 86px;
 }
-
-.nav-panel {
+.menu-btn {
+  display: none;
+}
+.menu-icon {
+  display: none;
+}
+.menu {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -177,7 +185,7 @@ main {
     margin-bottom: 50px;
     width: 731px;
     height: 548px;
-    background: url(/img/kitchen.png);
+    background: url(/img/kitchen_b.png);
 
     .service-image-description {
       font-family: Quicksand;
@@ -233,7 +241,7 @@ footer {
   align-items: center;
   width: 1440px;
   height: 96px;
-  margin: auto;
+  margin: 0;
   .logo_small {
     width: 42px;
     height: 30px;
@@ -283,6 +291,292 @@ footer {
       background: #b6b9b6;
       border-radius: 10px;
       margin: 0 16px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-ipad) {
+  html {
+    height: 1194px;
+  }
+  body {
+    width: 834px;
+    height: 1194px;
+  }
+  header {
+    width: 834px;
+    height: 112px;
+    .logo_big {
+      margin: 26px 528px 26px 41px;
+      width: 65.53px;
+      height: 60px;
+    }
+    .menu-icon {
+      display: inline;
+      order: 5;
+      margin: 44px 41px 44px 0;
+      :hover {
+        transition: all 1s;
+        transform: rotate(90deg);
+      }
+    }
+    .menu {
+      display: none;
+    }
+    .language-sel {
+      a {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      margin: 47px 64px 46px 0;
+      .lang-active {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  main {
+    width: 834px;
+    height: 825px;
+    flex-direction: column;
+    align-items: center;
+    margin: 22px 0 63px 0;
+    .scroll-info {
+      display: none;
+    }
+    .service-picker {
+      width: 192px;
+      height: 222px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 38px;
+      a {
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 28px;
+      }
+      .service-picker-active {
+        font-size: 40px;
+        line-height: 47px;
+        margin-top: 23px;
+        margin-left: 0;
+        &::before {
+          top: -24px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .service-imgage {
+      position: relative;
+      background-size: cover;
+      width: 834px;
+      height: 491px;
+      margin-bottom: 0;
+      .service-image-description {
+        left: 206px;
+        top: 321px;
+        width: 421px;
+        height: 244px;
+        p {
+          width: 318px;
+          height: 108px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+        a {
+          width: 82px;
+          height: 32px;
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  footer {
+    width: 834px;
+    height: 172px;
+    .logo_small {
+      margin: 71px 127px 71px 41px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: #282a28;
+    }
+
+    .contacts.container {
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      width: 211px;
+      height: 88px;
+      margin-right: 212px;
+    }
+
+    .address.container {
+      margin: 0 0 24px 0;
+    }
+    .phone.container {
+      margin: 0;
+    }
+    .social.container {
+      img {
+        &:last-child {
+          margin-right: 45.5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-iphone) {
+  html {
+    height: 1194px;
+  }
+  body {
+    width: 375px;
+    height: 812px;
+  }
+  header {
+    width: 834px;
+    height: 112px;
+    .logo_big {
+      margin: 26px 528px 26px 41px;
+      width: 65.53px;
+      height: 60px;
+    }
+    .menu-icon {
+      display: inline;
+      order: 5;
+      margin: 44px 41px 44px 0;
+      :hover {
+        transition: all 1s;
+        transform: rotate(90deg);
+      }
+    }
+    .menu {
+      display: none;
+    }
+    .language-sel {
+      a {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      margin: 47px 64px 46px 0;
+      .lang-active {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+  }
+  main {
+    width: 834px;
+    height: 825px;
+    flex-direction: column;
+    align-items: center;
+    margin: 22px 0 63px 0;
+    .scroll-info {
+      display: none;
+    }
+    .service-picker {
+      width: 192px;
+      height: 222px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 38px;
+      a {
+        font-size: 18px;
+        line-height: 21px;
+        margin-bottom: 28px;
+      }
+      .service-picker-active {
+        font-size: 40px;
+        line-height: 47px;
+        margin-top: 23px;
+        margin-left: 0;
+        &::before {
+          top: -24px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .service-imgage {
+      position: relative;
+      background-size: cover;
+      width: 834px;
+      height: 491px;
+      margin-bottom: 0;
+      .service-image-description {
+        left: 206px;
+        top: 321px;
+        width: 421px;
+        height: 244px;
+        p {
+          width: 318px;
+          height: 108px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+        a {
+          width: 82px;
+          height: 32px;
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  footer {
+    width: 834px;
+    height: 172px;
+    .logo_small {
+      margin: 71px 127px 71px 41px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: #282a28;
+    }
+
+    .contacts.container {
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      width: 211px;
+      height: 88px;
+      margin-right: 212px;
+    }
+
+    .address.container {
+      margin: 0 0 24px 0;
+    }
+    .phone.container {
+      margin: 0;
+    }
+    .social.container {
+      img {
+        &:last-child {
+          margin-right: 45.5px;
+        }
+      }
     }
   }
 }
