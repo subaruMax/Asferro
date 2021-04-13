@@ -66,15 +66,6 @@ header {
     flex-grow: 0;
     margin-right: 56px;
   }
-  :nth-child(1) {
-    margin-right: 56px;
-  }
-  :nth-child(2) {
-    margin: 0px;
-  }
-  :nth-child(3) {
-    margin: 0px 56px;
-  }
 }
 
 .language-sel {
@@ -165,7 +156,7 @@ main {
     text-transform: uppercase;
     list-style: circle;
     color: #282a28 !important;
-    margin-left: 28px;
+    margin-left: 29px;
     &::before {
       content: "";
       position: absolute;
@@ -182,7 +173,7 @@ main {
     margin-bottom: 50px;
     width: 731px;
     height: 548px;
-    background: url(/img/kitchen_b.png);
+    background: url(../img/kitchen_b.png);
 
     .service-image-description {
       font-family: Quicksand;
@@ -260,7 +251,9 @@ footer {
     line-height: 20px;
     color: #282a28;
   }
-
+  .contacts.container {
+    margin-right: 368.57px;
+  }
   .address.container {
     width: 211px;
     height: 40px;
@@ -269,18 +262,15 @@ footer {
   .phone.container {
     width: 145px;
     height: 24px;
-    margin-right: 368.57px;
     a {
       color: #282a28;
     }
   }
   .social.container {
+    margin-right: 152px;
     img {
       height: 32px;
       width: 32px;
-      &:last-child {
-        margin-right: 156.5px;
-      }
     }
     .dot {
       width: 3px;
@@ -312,6 +302,8 @@ footer {
       display: inline;
       order: 5;
       margin: 44px 41px 44px 0;
+      width: 36px;
+      height: 24px;
       :hover {
         transition: all 1s;
         transform: rotate(90deg);
@@ -321,11 +313,11 @@ footer {
       display: none;
     }
     .language-sel {
+      margin: 47px 64px 46px 0;
       a {
         font-size: 16px;
         line-height: 19px;
       }
-      margin: 47px 64px 46px 0;
       .lang-active {
         font-size: 16px;
         line-height: 19px;
@@ -519,7 +511,6 @@ footer {
       width: 375px;
       height: 310px;
       margin-bottom: 0;
-      background-image: url(/img/kitchen_s.png);
       .service-image-description {
         left: 45px;
         top: 189px;
