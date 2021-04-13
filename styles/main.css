@@ -102,9 +102,6 @@ header {
 .language-sel a:nth-child(1) {
   margin-right: 11px;
 }
-.language-sel a:nth-child(2) {
-  margin-right: 152px;
-}
 
 main {
   display: flex;
@@ -337,7 +334,7 @@ footer .social.container .dot {
   main .service-picker {
     width: 192px;
     height: 222px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto 38px;
   }
@@ -422,7 +419,7 @@ footer .social.container .dot {
 }
 @media (max-width: 375px) {
   html {
-    height: 1194px;
+    height: 812px;
   }
 
   body {
@@ -431,18 +428,20 @@ footer .social.container .dot {
   }
 
   header {
-    width: 834px;
-    height: 112px;
+    width: 375px;
+    height: 72px;
   }
   header .logo_big {
-    margin: 26px 528px 26px 41px;
-    width: 65.53px;
-    height: 60px;
+    margin: 16px 177px 16px 20px;
+    width: 43.68px;
+    height: 40px;
   }
   header .menu-icon {
     display: inline;
     order: 5;
-    margin: 44px 41px 44px 0;
+    margin: 24px 19px 24px 0;
+    width: 36px;
+    height: 24px;
   }
   header .menu-icon :hover {
     transition: all 1s;
@@ -452,111 +451,131 @@ footer .social.container .dot {
     display: none;
   }
   header .language-sel {
-    margin: 47px 64px 46px 0;
+    margin: 29px 35.5px 29px 0;
   }
   header .language-sel a {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 7.5px;
   }
   header .language-sel .lang-active {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   main {
-    width: 834px;
-    height: 825px;
+    width: 375px;
+    height: 534.21px;
     flex-direction: column;
     align-items: center;
-    margin: 22px 0 63px 0;
+    margin: 24px 0 21.8px;
   }
   main .scroll-info {
     display: none;
   }
   main .service-picker {
-    width: 192px;
-    height: 222px;
-    justify-content: center;
+    width: 154px;
+    height: 158.16px;
+    justify-content: flex-start;
     align-items: center;
-    margin: 0 auto 38px;
+    margin: 0 auto 19.8px;
   }
   main .service-picker a {
-    font-size: 18px;
-    line-height: 21px;
-    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 16px;
   }
   main .service-picker .service-picker-active {
-    font-size: 40px;
-    line-height: 47px;
-    margin-top: 23px;
+    font-size: 32px;
+    line-height: 37px;
+    margin-top: 16px;
     margin-left: 0;
   }
   main .service-picker .service-picker-active::before {
-    top: -24px;
+    width: 8.16px;
+    height: 8.16px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
   }
   main .service-imgage {
     position: relative;
     background-size: cover;
-    width: 834px;
-    height: 491px;
+    width: 375px;
+    height: 310px;
     margin-bottom: 0;
+    background-image: url(/img/kitchen_s.png);
   }
   main .service-imgage .service-image-description {
-    left: 206px;
-    top: 321px;
-    width: 421px;
-    height: 244px;
+    left: 45px;
+    top: 189px;
+    width: 286px;
+    height: 167px;
   }
   main .service-imgage .service-image-description p {
-    width: 318px;
-    height: 108px;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 40px 46px 16px 24px;
+    width: 216.26px;
+    height: 73.45px;
   }
   main .service-imgage .service-image-description a {
-    width: 82px;
-    height: 32px;
-    font-size: 24px;
-    line-height: 30px;
+    width: 58.32px;
+    height: 21.76px;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 204px 16px 24px;
+  }
+  main .service-imgage .service-image-description a img {
+    width: 8px;
+    height: 8px;
   }
 
   footer {
-    width: 834px;
-    height: 172px;
+    width: 375px;
+    height: 160px;
+    flex-wrap: wrap;
   }
   footer .logo_small {
-    margin: 71px 127px 71px 41px;
+    width: 33.45px;
+    height: 24px;
+    margin: 29px 137px 0 44px;
+  }
+  footer .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
   }
   footer .container {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 20px;
-    color: #282a28;
+    font-size: 14px;
+    line-height: 17px;
   }
   footer .contacts.container {
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    width: 211px;
-    height: 88px;
-    margin-right: 212px;
+    flex-direction: row;
+    align-items: center;
+    width: 336px;
+    height: 36px;
+    order: 3;
+    margin: 46px auto 0;
   }
   footer .address.container {
     margin: 0 0 24px 0;
   }
   footer .phone.container {
-    margin: 0;
+    margin: 0 auto 25px 43px;
+  }
+  footer .social.container {
+    width: 142px;
+    height: 24px;
+    order: 2;
+    margin: 29px 18.5px 0 0;
+  }
+  footer .social.container img {
+    height: 24px;
+    width: 24px;
   }
   footer .social.container img:last-child {
-    margin-right: 45.5px;
+    margin-right: 0px;
   }
 }
 
