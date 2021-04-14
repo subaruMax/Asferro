@@ -1,10 +1,5 @@
 html {
   box-sizing: border-box;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   height: 100%;
 }
 
@@ -17,6 +12,7 @@ html {
 body {
   width: 1440px;
   height: 900px;
+  margin: auto;
 }
 
 a {
@@ -311,6 +307,27 @@ footer .social.container .dot {
   margin: 0 16px;
 }
 
+@media (min-width: 1025px) {
+  body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  footer {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
 @media (max-width: 1024px) {
   body {
     width: 1024px;
