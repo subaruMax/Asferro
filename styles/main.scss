@@ -78,6 +78,32 @@ header {
   }
 }
 
+.burger-menu {
+  display: none;
+}
+
+.show-menu {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  border-top: 1px solid #979797;
+  border-bottom: 1px solid #979797;
+  margin-bottom: 60px;
+  a {
+    color: #282a28;
+    margin: 20px auto;
+    &.menu-active {
+      color: #d3c1ac;
+    }
+  }
+}
+
 .language-sel {
   display: flex;
   flex-direction: row;
@@ -389,10 +415,7 @@ footer {
       margin: 44px 41px 44px 0;
       width: 36px;
       height: 24px;
-      :hover {
-        transition: all 1s;
-        transform: rotate(90deg);
-      }
+      user-select: none;
     }
     .menu {
       display: none;

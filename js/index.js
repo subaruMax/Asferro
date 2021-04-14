@@ -21,6 +21,10 @@ const servicesApp = {
     $("#bathroom"),
     $("#terrace"),
   ],
+  closeBurgerMenuOnResolutionChange() {
+    const winWith = window.screen.width;
+    if (winWith > 834) $("#burger-menu").removeClass("show-menu");
+  },
   setImgIndexToLoad() {
     const winWith = window.screen.width;
     if (winWith <= 375) this.imgIndexToLoad = 2;
@@ -77,15 +81,17 @@ servicesApp.setServiceData();
 $(window).resize(() => {
   servicesApp.setImgIndexToLoad();
   servicesApp.setImage();
+  servicesApp.closeBurgerMenuOnResolutionChange();
 });
 
 $("#servicePicker")
   .bind("mousewheel", servicesApp.updateServiceDataOnScroll.bind(servicesApp))
   .click(servicesApp.updateServiceDataOnClick.bind(servicesApp));
 
-$("#nav-menu").click((e) => {
+$("#nav-menu,#burger-menu").click((e) => {
   if (e.target.tagName === "A") {
     $("#nav-menu>li>.menu-active").removeClass("menu-active");
+    $("#burger-menu>.menu-active").removeClass("menu-active");
     $(e.target).addClass("menu-active");
   }
 });
@@ -95,4 +101,8 @@ $("#language-sel").click((e) => {
     $("#language-sel>.lang-active").removeClass("lang-active");
     $(e.target).addClass("lang-active");
   }
+});
+
+$("#hamburger").click(() => {
+  $("#burger-menu").toggleClass("show-menu");
 });
