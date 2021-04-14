@@ -1,10 +1,10 @@
 "use strict";
 
 const serviceImages = [
-  ["../img/livingrm_b.png", "../img/livingrm_m.png", "../img/livingrm_s.png"],
-  ["../img/kitchen_b.png", "../img/kitchen_m.png", "../img/kitchen_s.png"],
-  ["../img/bathroom_b.png", "../img/bathroom_m.png", "../img/bathroom_s.png"],
-  ["../img/terrace.png"],
+  ["./img/livingrm_b.png", "./img/livingrm_m.png", "./img/livingrm_s.png"],
+  ["./img/kitchen_b.png", "./img/kitchen_m.png", "./img/kitchen_s.png"],
+  ["./img/bathroom_b.png", "./img/bathroom_m.png", "./img/bathroom_s.png"],
+  ["./img/terrace.png"],
 ];
 const serviceDescription = [
   "Get these gorgeous modern living room. Refresh your own space today.",
