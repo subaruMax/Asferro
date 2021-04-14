@@ -1,6 +1,8 @@
 "use strict";
 
 const servicesApp = {
+  scrollTimeout: "",
+  throttle: 500,
   currentElement: 0,
   imgIndexToLoad: 0,
   serviceImages: [
@@ -84,9 +86,18 @@ $(window).resize(() => {
   servicesApp.closeBurgerMenuOnResolutionChange();
 });
 
-$("#servicePicker")
-  .bind("mousewheel", servicesApp.updateServiceDataOnScroll.bind(servicesApp))
-  .click(servicesApp.updateServiceDataOnClick.bind(servicesApp));
+$("#servicePicker").click(
+  servicesApp.updateServiceDataOnClick.bind(servicesApp)
+);
+$("main").on("mousewheel", (e) => {
+  let event = e;
+  if (!servicesApp.scrollTimeout) {
+    servicesApp.scrollTimeout = setTimeout(() => {
+      servicesApp.updateServiceDataOnScroll(event);
+      servicesApp.scrollTimeout = null;
+    }, servicesApp.throttle);
+  }
+});
 
 $("#nav-menu,#burger-menu").click((e) => {
   if (e.target.tagName === "A") {
