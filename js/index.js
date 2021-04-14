@@ -1,72 +1,87 @@
 "use strict";
 
-const serviceImages = [
-  ["./img/livingrm_b.png", "./img/livingrm_m.png", "./img/livingrm_s.png"],
-  ["./img/kitchen_b.png", "./img/kitchen_m.png", "./img/kitchen_s.png"],
-  ["./img/bathroom_b.png", "./img/bathroom_m.png", "./img/bathroom_s.png"],
-  ["./img/terrace.png"],
-];
-const serviceDescription = [
-  "Get these gorgeous modern living room. Refresh your own space today.",
-  "Get the modern luxury kitchen look. Explore chef driven interiors and decor.",
-  "If there's a room that deserves a little luxury, it's the bathroom.",
-  "Wish to lounge for a drink or a dish, while enjoying an amazing panorama?",
-];
-
-const serviceElements = [
-  $("#livingRoom"),
-  $("#kitchen"),
-  $("#bathroom"),
-  $("#terrace"),
-];
-
-const initialElement = 0;
-let currentElement = 0;
-
-$("#mainIMGdescription").text(serviceDescription[currentElement]);
-$("#mainIMG").css("background", `url(${serviceImages[currentElement][0]})`);
-serviceElements[initialElement].addClass("service-picker-active");
-
-$("main").bind("mousewheel", function (event) {
-  if (event.originalEvent.wheelDelta >= 0) {
-    if (currentElement > 0) {
-      serviceElements[currentElement].removeClass("service-picker-active");
-      --currentElement;
-      serviceElements[currentElement].addClass("service-picker-active");
-      $("#mainIMG").css(
-        "background",
-        `url(${serviceImages[currentElement][0]})`
-      );
-      $("#mainIMGdescription").text(serviceDescription[currentElement]);
+const servicesApp = {
+  currentElement: 0,
+  imgIndexToLoad: 0,
+  serviceImages: [
+    ["./img/livingrm_b.png", "./img/livingrm_m.png", "./img/livingrm_s.png"],
+    ["./img/kitchen_b.png", "./img/kitchen_m.png", "./img/kitchen_s.png"],
+    ["./img/bathroom_b.png", "./img/bathroom_m.png", "./img/bathroom_s.png"],
+    ["./img/terrace_b.png", "./img/terrace_m.png", "./img/terrace_s.png"],
+  ],
+  serviceDescription: [
+    "Get these gorgeous modern living room. Refresh your own space today.",
+    "Get the modern luxury kitchen look. Explore chef driven interiors and decor.",
+    "If there's a room that deserves a little luxury, it's the bathroom.",
+    "Wish to lounge for a drink or a dish, while enjoying an amazing panorama?",
+  ],
+  serviceElements: [
+    $("#livingRoom"),
+    $("#kitchen"),
+    $("#bathroom"),
+    $("#terrace"),
+  ],
+  setImgIndexToLoad() {
+    const winWith = window.screen.width;
+    if (winWith <= 375) this.imgIndexToLoad = 2;
+    else if (winWith <= 834) this.imgIndexToLoad = 1;
+    else if (winWith > 834) this.imgIndexToLoad = 0;
+  },
+  setImage() {
+    $("#mainIMG").css(
+      "background",
+      `url(${this.serviceImages[this.currentElement][this.imgIndexToLoad]})`
+    );
+  },
+  setServiceData() {
+    this.setImgIndexToLoad();
+    this.serviceElements[this.currentElement].addClass("service-picker-active");
+    $("#mainIMGdescription").text(this.serviceDescription[this.currentElement]);
+    this.setImage();
+  },
+  updateServiceDataOnScroll(e) {
+    if (e.originalEvent.wheelDelta >= 0) {
+      if (this.currentElement > 0) {
+        this.serviceElements[this.currentElement].removeClass(
+          "service-picker-active"
+        );
+        --this.currentElement;
+        this.setServiceData();
+      }
+    } else {
+      if (this.currentElement < this.serviceElements.length - 1) {
+        this.serviceElements[this.currentElement].removeClass(
+          "service-picker-active"
+        );
+        ++this.currentElement;
+        this.setServiceData();
+      }
     }
-  } else {
-    if (currentElement < serviceElements.length - 1) {
-      serviceElements[currentElement].removeClass("service-picker-active");
-      ++currentElement;
-      serviceElements[currentElement].addClass("service-picker-active");
-      $("#mainIMG").css(
-        "background",
-        `url(${serviceImages[currentElement][0]})`
+  },
+  updateServiceDataOnClick(e) {
+    if (e.target.tagName === "A") {
+      $("#servicePicker>.service-picker-active").removeClass(
+        "service-picker-active"
       );
-      $("#mainIMGdescription").text(serviceDescription[currentElement]);
+      const indexOfTarget = this.serviceElements.findIndex(
+        (val) => val[0] == $(e.target)[0]
+      );
+      this.currentElement = indexOfTarget;
+      this.setServiceData();
     }
-  }
+  },
+};
+
+servicesApp.setServiceData();
+
+$(window).resize(() => {
+  servicesApp.setImgIndexToLoad();
+  servicesApp.setImage();
 });
 
-$("#servicePicker").click((e) => {
-  if (e.target.tagName === "A") {
-    $("#servicePicker>.service-picker-active").removeClass(
-      "service-picker-active"
-    );
-    const indexOfTarget = serviceElements.findIndex(
-      (val) => val[0] == $(e.target)[0]
-    );
-    $(e.target).addClass("service-picker-active");
-    currentElement = indexOfTarget;
-    $("#mainIMGdescription").text(serviceDescription[currentElement]);
-    $("#mainIMG").css("background", `url(${serviceImages[currentElement][0]})`);
-  }
-});
+$("#servicePicker")
+  .bind("mousewheel", servicesApp.updateServiceDataOnScroll.bind(servicesApp))
+  .click(servicesApp.updateServiceDataOnClick.bind(servicesApp));
 
 $("#nav-menu").click((e) => {
   if (e.target.tagName === "A") {
